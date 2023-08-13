@@ -1,6 +1,6 @@
 <form action="auth.php" class="login-register-menu" method="GET">
 
-    <a class="close-btn" href="?action=''">x</a>
+    <a class="close-btn" href="?">x</a>
     <h3>login</h3>
 
     <label for="email">Email</label><br>

@@ -16,7 +16,6 @@
     .homepage {
         height: 60.1em;
         padding: 20em;
-        background-image: url('images/homepage.jpg');
         color: white;
     }
 

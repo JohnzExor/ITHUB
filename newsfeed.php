@@ -19,12 +19,12 @@
         <div class="create-post">
             <form method="POST">
                 <label class="post-label" for="post-text">Create a post</label><br>
-                <input class="post-text" type="text" name="post-text" id="" placeholder="Create a post"><br>
+                <textarea class="text-area" name="post-text" id="" cols="30" rows="10" placeholder="Share something.."></textarea><br>
                 <input class="post-btn" type="submit">
             </form>
         </div>
 
-        <?php 
+        <?php
             $query = "SELECT * FROM user_feed";
             $result = mysqli_query($conn, $query);
 
@@ -40,9 +40,9 @@
                         $row_name = $result_name->fetch_assoc();
                         echo "
                             <div class='feed'>
-                            <p class='user-name'>" . $row_name['name'] . "</p>
-                            <p>" . $row['text'] . "</p>
-                            <p class='date-posted'>" . $row['date_posted'] . "</p>
+                                <p class='user-name'>" . $row_name['name'] . "</p>
+                                <p class='feed-text'>" . $row['text'] . "</p>
+                                <p class='date-posted'>" . $row['date_posted'] . "</p>
                             </div>
                         ";
                     }
@@ -54,47 +54,42 @@
 </div>
 
 <style>
-    .newsfeed {
-        background-color: #171616;
-        height: 60em;
-        color: white;
+
+    .newsfeed-container {
+        padding-top: 5em;
     }
-    
+
     .create-post {
-        background-color: white;
-        width: 50em;
+        width: 30em;
         margin: auto;
-        color: black;
+        background-color: white;
+        padding: 1em;
+        border-radius: 1em;
         text-align: center;
-        border-radius: 1em;
-        position: relative;
-        top: 10em;
     }
 
-    .post-label {
+    .create-post .post-label {
+        font-size: 20px;
         font-weight: bold;
     }
 
-    .create-post .post-text {
-        padding-bottom: 3em;
+    .create-post .text-area {
+        margin-top: 1em;
+        width: 100%;
         border-radius: 1em;
-        border-color: black;
-        width: 90%;
         padding: 1em;
     }
 
-    .post-btn {
-        padding: 1em;
-        width: 10em;
-        margin: 1em;
-        background-color: #171616;
+    .create-post .post-btn {
+        width: 20em;
+        height: 3em;
+        border-radius: 1em;
+        background-color: black;
         color: white;
-        font-weight: bold;
         cursor: pointer;
-        border-radius: 1em;
     }
 
-    .post-btn:hover {
+    .create-post .post-btn:hover {
         color: black;
         background-color: white;
         transition: 0.5s;
@@ -108,10 +103,8 @@
         margin: auto;
         border-radius: 1em;
         margin-top: 1em;
-        position: relative;
-        top: 10em;
     }
-
+    
     .feed .user-name {
         font-weight: bold;
     }

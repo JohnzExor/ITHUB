@@ -1,6 +1,6 @@
 <form action="auth.php" class="login-register-menu" method="POST">
 
-    <a class="close-btn" href="?action=''">x</a>
+    <a class="close-btn" href="?">x</a>
     <h3>Register</h3>
 
     <label for="firstname">Firstname</label><br>

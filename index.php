@@ -29,10 +29,24 @@
             ?>
         </ul>    
     </nav>
-    <?php 
-    if(!isset($_SESSION['email'])){
-        include 'homepage.php';
-    } else include 'newsfeed.php';
-    ?>
+    <div class="background"></div>
+    <div class="container">
+        <?php 
+            if(!isset($_SESSION['email'])){
+                include 'homepage.php';
+            } else include 'newsfeed.php';
+        ?>
+    </div>
+    <div class="background-color"></div>
 </body>
 </html>
+
+<style>
+    .background {
+        background-color: #121211;
+        height: 60.1em;
+        position: fixed;
+        width: 100%;
+        z-index: -1;
+    }
+</style>
