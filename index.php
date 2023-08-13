@@ -15,6 +15,7 @@
                 if(isset($_SESSION['email'])){
 
                     echo "
+                    <button class='writesomething'><a href='?action=write'>Write Something..</a></button>;
                     <li><a>" . $_SESSION['email'] . " </a></li>;
                     <li><a href='logout.php'>Logout</a></li>;
                     ";
@@ -48,5 +49,17 @@
         position: fixed;
         width: 100%;
         z-index: -1;
+    }
+
+    .writesomething {
+        width: 20em;
+        height: 2em;
+        border-radius: 0.5em;
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    .writesomething a {
+        color: gray;
     }
 </style>

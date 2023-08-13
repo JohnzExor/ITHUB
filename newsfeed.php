@@ -16,19 +16,25 @@
 
 <div class="newsfeed">
     <div class="newsfeed-container">
-        <div class="create-post">
-            <form method="POST">
-                <label class="post-label" for="post-text">Create a post</label><br>
-                <textarea class="text-area" name="post-text" id="" cols="30" rows="10" placeholder="Share something.."></textarea><br>
-                <input class="post-btn" type="submit">
-            </form>
-        </div>
 
-        <?php
-            $query = "SELECT * FROM user_feed";
+        <?php 
+        if(isset($_GET['action']) && $_GET['action'] == "write") {
+            echo "
+            <div class='create-post'>
+                <form method='POST'>
+                    <a class='close-btn'; href='?'>x</a>
+                    <label class='post-label' for='post-text'>Create a post</label><br>
+                    <textarea class='text-area' name='post-text' id='' cols='30' rows='10' placeholder='Share something..'></textarea><br>
+                    <input class='post-btn' type='submit'>
+                </form>
+            </div>
+            ";
+        }
+
+            $query = "SELECT * FROM user_feed ORDER BY date_posted DESC";
             $result = mysqli_query($conn, $query);
 
-            if ($result) {
+            if ($result->num_rows >= 1) {
                 while ($row = $result->fetch_assoc()) {
 
                     $user_post = $row['user_id'];
@@ -47,7 +53,7 @@
                         ";
                     }
                 }
-            }
+            } else echo "<div class='feed'>No posts</div>";
         ?>
 
     </div>
@@ -60,6 +66,7 @@
     }
 
     .create-post {
+        position: sticky;
         width: 30em;
         margin: auto;
         background-color: white;
