@@ -11,6 +11,5 @@
 
     <input type="submit" class="submit-btn">
 
+    <p style="font-size: 15px; padding-top: 1em; text-align: center;">Dont have an Account? <a style="font-weight: bold; color: black;" href="?action=register">Create an Account</a></p>
 </form>
-
-<a href="?action=register"></a>

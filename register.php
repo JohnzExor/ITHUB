@@ -4,7 +4,7 @@
     <h3>Register</h3>
 
     <label for="firstname">Firstname</label><br>
-    <input type="text" name="Firstname" id="" placeholder="Juan"><br>
+    <input type="text" name="firstname" id="" placeholder="Juan"><br>
 
     <label for="Lastname">Lastname</label><br>
     <input type="text=" name="lastname" id="" placeholder="Delacruz"><br>
@@ -20,6 +20,6 @@
 
     <input type="submit" class="submit-btn">
 
-</form>
+    <p style="font-size: 15px; padding-top: 1em; text-align: center;">Already have an account? <a style="font-weight: bold; color: black;" href="?action=login">Login</a></p>
 
-<a href="?action=login"></a>
+</form>
