@@ -44,13 +44,20 @@
 
                     if ($result_name) {
                         $row_name = $result_name->fetch_assoc();
+                        $query_delete = "DELETE FROM user_feed WHERE post_id=$result[post_id]";
                         echo "
                             <div class='feed'>
+                                <a class='close-btn' href='?action=delete_post'>x</a>
                                 <p class='user-name'>" . $row_name['name'] . "</p>
                                 <p class='feed-text'>" . $row['text'] . "</p>
                                 <p class='date-posted'>" . $row['date_posted'] . "</p>
                             </div>
                         ";
+
+                        if(isset($_GET['action']) && $_GET['action'] == 'delete'){
+                            $query_delete = "DELETE FROM user_feed WHERE post_id=$result[post_id]";
+                            $result = 
+                        }
                     }
                 }
             } else echo "<div class='feed'>No posts</div>";
@@ -66,9 +73,11 @@
     }
 
     .create-post {
-        position: sticky;
+        position: fixed;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%);
         width: 30em;
-        margin: auto;
         background-color: white;
         padding: 1em;
         border-radius: 1em;
